@@ -1,1 +1,1 @@
-include ':app', ':commonbluetooth'
+include ':commonbluetooth', ':commonbluetooth-sample'

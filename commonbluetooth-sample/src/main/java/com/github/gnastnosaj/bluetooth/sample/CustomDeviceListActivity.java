@@ -3,7 +3,6 @@ package com.github.gnastnosaj.commonbluetooth.app;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.github.gnastnosaj.commonbluetooth.app.R;
 import com.github.gnastnosaj.commonbluetooth.CommonBluetooth;
 import com.github.gnastnosaj.commonbluetooth.Data;
 import com.github.gnastnosaj.commonbluetooth.Device;

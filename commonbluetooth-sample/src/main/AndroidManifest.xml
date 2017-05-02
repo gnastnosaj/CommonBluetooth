@@ -1,15 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.gnastnosaj.commonbluetooth.app">
+    package="com.github.gnastnosaj.bluetooth.sample">
 
-    <application
-        android:name=".CommonBluetoothApp"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".CustomDeviceListActivity"
+    <application android:name=".CommonBluetoothApp" android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher" android:label="@string/app_name"
+        android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name=".CustomDeviceListActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -17,10 +12,8 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".DemoActivity"
+        <activity android:name=".DemoActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize" />
 
     </application>
-
 </manifest>

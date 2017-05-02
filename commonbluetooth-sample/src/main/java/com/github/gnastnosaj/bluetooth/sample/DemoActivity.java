@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.github.gnastnosaj.boilerplate.ui.activity.BaseActivity;
 
-import com.github.gnastnosaj.commonbluetooth.app.R;
 import com.github.gnastnosaj.commonbluetooth.CommonBluetooth;
 import com.github.gnastnosaj.commonbluetooth.Data;
 import com.github.gnastnosaj.commonbluetooth.Device;
