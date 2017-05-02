@@ -1,14 +1,11 @@
-package io.jasontsang.commonbluetooth.app;
+package com.github.gnastnosaj.commonbluetooth;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import io.jasontsang.commonbluetooth.CommonBluetooth;
-import io.jasontsang.commonbluetooth.Data;
-import io.jasontsang.commonbluetooth.Device;
-import io.jasontsang.commonbluetooth.event.BLEEvent;
-import io.jasontsang.commonbluetooth.event.DeviceEvent;
-import io.jasontsang.commonbluetooth.ui.activity.DeviceListActivity;
+import com.github.gnastnosaj.commonbluetooth.event.BLEEvent;
+import com.github.gnastnosaj.commonbluetooth.event.DeviceEvent;
+import com.github.gnastnosaj.commonbluetooth.ui.activity.DeviceListActivity;
 
 /**
  * Created by jason on 12/4/2015.

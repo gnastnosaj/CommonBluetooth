@@ -1,4 +1,4 @@
-package io.jasontsang.commonbluetooth.event;
+package com.github.gnastnosaj.commonbluetooth.event;
 
 import android.os.Bundle;
 

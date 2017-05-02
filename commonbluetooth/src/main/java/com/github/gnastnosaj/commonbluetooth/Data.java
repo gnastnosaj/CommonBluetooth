@@ -1,4 +1,4 @@
-package io.jasontsang.commonbluetooth;
+package com.github.gnastnosaj.commonbluetooth;
 
 import android.os.Bundle;
 

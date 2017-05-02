@@ -1,4 +1,4 @@
-package io.jasontsang.commonbluetooth.app;
+package com.github.gnastnosaj.commonbluetooth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +8,7 @@ import android.widget.TextView;
 
 import com.github.gnastnosaj.boilerplate.ui.activity.BaseActivity;
 
-import io.jasontsang.commonbluetooth.CommonBluetooth;
-import io.jasontsang.commonbluetooth.Data;
-import io.jasontsang.commonbluetooth.Device;
-import io.jasontsang.commonbluetooth.event.DataEvent;
+import com.github.gnastnosaj.commonbluetooth.event.DataEvent;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;

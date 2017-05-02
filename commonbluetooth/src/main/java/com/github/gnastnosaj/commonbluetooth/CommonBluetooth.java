@@ -1,4 +1,4 @@
-package io.jasontsang.commonbluetooth;
+package com.github.gnastnosaj.commonbluetooth;
 
 import android.app.Application;
 import android.bluetooth.BluetoothAdapter;
@@ -14,10 +14,10 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 
-import io.jasontsang.commonbluetooth.event.BLEEvent;
-import io.jasontsang.commonbluetooth.event.CommonBluetoothEvent;
-import io.jasontsang.commonbluetooth.event.DataEvent;
-import io.jasontsang.commonbluetooth.event.DeviceEvent;
+import com.github.gnastnosaj.commonbluetooth.event.BLEEvent;
+import com.github.gnastnosaj.commonbluetooth.event.CommonBluetoothEvent;
+import com.github.gnastnosaj.commonbluetooth.event.DataEvent;
+import com.github.gnastnosaj.commonbluetooth.event.DeviceEvent;
 
 import com.github.gnastnosaj.boilerplate.Boilerplate;
 import com.github.gnastnosaj.boilerplate.rxbus.RxBus;
@@ -54,7 +54,7 @@ public class CommonBluetooth {
 
     public static void init(Application application, boolean otherDevice) {
         Boilerplate.initialize(application);
-        
+
         CommonBluetooth.application = application;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
             liteBluetooth = new LiteBluetooth(application);

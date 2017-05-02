@@ -1,8 +1,6 @@
-package io.jasontsang.commonbluetooth.app;
+package com.github.gnastnosaj.commonbluetooth;
 
 import android.app.Application;
-
-import io.jasontsang.commonbluetooth.CommonBluetooth;
 
 /**
  * Created by jason on 12/4/2015.

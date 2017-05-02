@@ -1,4 +1,4 @@
-package io.jasontsang.commonbluetooth.ui.activity;
+package com.github.gnastnosaj.commonbluetooth.ui.activity;
 
 import android.Manifest;
 import android.os.Bundle;
@@ -6,12 +6,12 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import io.jasontsang.commonbluetooth.CommonBluetooth;
-import io.jasontsang.commonbluetooth.Device;
-import io.jasontsang.commonbluetooth.OnDeviceItemClickListener;
-import io.jasontsang.commonbluetooth.R;
-import io.jasontsang.commonbluetooth.adapter.DeviceListAdapter;
-import io.jasontsang.commonbluetooth.event.DeviceEvent;
+import com.github.gnastnosaj.commonbluetooth.CommonBluetooth;
+import com.github.gnastnosaj.commonbluetooth.Device;
+import com.github.gnastnosaj.commonbluetooth.OnDeviceItemClickListener;
+import com.github.gnastnosaj.commonbluetooth.R;
+import com.github.gnastnosaj.commonbluetooth.adapter.DeviceListAdapter;
+import com.github.gnastnosaj.commonbluetooth.event.DeviceEvent;
 
 import com.github.gnastnosaj.boilerplate.ui.activity.BaseActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
