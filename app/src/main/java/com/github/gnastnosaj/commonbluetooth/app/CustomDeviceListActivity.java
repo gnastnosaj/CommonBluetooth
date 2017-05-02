@@ -1,8 +1,12 @@
-package com.github.gnastnosaj.commonbluetooth;
+package com.github.gnastnosaj.commonbluetooth.app;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.github.gnastnosaj.commonbluetooth.app.R;
+import com.github.gnastnosaj.commonbluetooth.CommonBluetooth;
+import com.github.gnastnosaj.commonbluetooth.Data;
+import com.github.gnastnosaj.commonbluetooth.Device;
 import com.github.gnastnosaj.commonbluetooth.event.BLEEvent;
 import com.github.gnastnosaj.commonbluetooth.event.DeviceEvent;
 import com.github.gnastnosaj.commonbluetooth.ui.activity.DeviceListActivity;

@@ -2,14 +2,14 @@
     package="com.github.gnastnosaj.commonbluetooth.app">
 
     <application
-        android:name="com.github.gnastnosaj.commonbluetooth.CommonBluetoothApp"
+        android:name=".CommonBluetoothApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.github.gnastnosaj.commonbluetooth.CustomDeviceListActivity"
+            android:name=".CustomDeviceListActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -18,7 +18,7 @@
         </activity>
 
         <activity
-            android:name="com.github.gnastnosaj.commonbluetooth.DemoActivity"
+            android:name=".DemoActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize" />
 
     </application>

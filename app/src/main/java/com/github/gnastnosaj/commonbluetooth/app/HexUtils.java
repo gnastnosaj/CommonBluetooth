@@ -1,4 +1,4 @@
-package com.github.gnastnosaj.commonbluetooth;
+package com.github.gnastnosaj.commonbluetooth.app;
 
 import android.annotation.SuppressLint;
 

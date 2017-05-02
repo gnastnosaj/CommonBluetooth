@@ -1,4 +1,4 @@
-package com.github.gnastnosaj.commonbluetooth;
+package com.github.gnastnosaj.commonbluetooth.app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,10 @@ import android.widget.TextView;
 
 import com.github.gnastnosaj.boilerplate.ui.activity.BaseActivity;
 
+import com.github.gnastnosaj.commonbluetooth.app.R;
+import com.github.gnastnosaj.commonbluetooth.CommonBluetooth;
+import com.github.gnastnosaj.commonbluetooth.Data;
+import com.github.gnastnosaj.commonbluetooth.Device;
 import com.github.gnastnosaj.commonbluetooth.event.DataEvent;
 
 import java.io.ByteArrayOutputStream;
@@ -45,10 +49,10 @@ public class DemoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo);
-        send = (EditText) findViewById(R.id.send);
-        writeData = (Button) findViewById(R.id.write);
-        receive = (TextView) findViewById(R.id.receive);
+        setContentView(com.github.gnastnosaj.commonbluetooth.R.layout.activity_demo);
+        send = (EditText) findViewById(com.github.gnastnosaj.commonbluetooth.R.id.send);
+        writeData = (Button) findViewById(com.github.gnastnosaj.commonbluetooth.R.id.write);
+        receive = (TextView) findViewById(com.github.gnastnosaj.commonbluetooth.R.id.receive);
         writeData.setOnClickListener(view -> {
             receive.setText("");
             commands.clear();
