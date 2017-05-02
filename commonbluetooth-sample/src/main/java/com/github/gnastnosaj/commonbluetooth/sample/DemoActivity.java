@@ -48,10 +48,10 @@ public class DemoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.github.gnastnosaj.commonbluetooth.R.layout.activity_demo);
-        send = (EditText) findViewById(com.github.gnastnosaj.commonbluetooth.R.id.send);
-        writeData = (Button) findViewById(com.github.gnastnosaj.commonbluetooth.R.id.write);
-        receive = (TextView) findViewById(com.github.gnastnosaj.commonbluetooth.R.id.receive);
+        setContentView(R.layout.activity_demo);
+        send = (EditText) findViewById(R.id.send);
+        writeData = (Button) findViewById(R.id.write);
+        receive = (TextView) findViewById(R.id.receive);
         writeData.setOnClickListener(view -> {
             receive.setText("");
             commands.clear();
