@@ -1,4 +1,4 @@
-package com.github.gnastnosaj.commonbluetooth.app;
+package com.github.gnastnosaj.commonbluetooth.sample;
 
 import android.app.Application;
 
