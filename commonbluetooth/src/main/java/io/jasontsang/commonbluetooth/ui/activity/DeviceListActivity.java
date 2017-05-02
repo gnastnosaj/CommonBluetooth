@@ -1,11 +1,10 @@
 package io.jasontsang.commonbluetooth.ui.activity;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import io.jasontsang.commonbluetooth.CommonBluetooth;
 import io.jasontsang.commonbluetooth.Device;
@@ -13,23 +12,25 @@ import io.jasontsang.commonbluetooth.OnDeviceItemClickListener;
 import io.jasontsang.commonbluetooth.R;
 import io.jasontsang.commonbluetooth.adapter.DeviceListAdapter;
 import io.jasontsang.commonbluetooth.event.DeviceEvent;
+
+import com.github.gnastnosaj.boilerplate.ui.activity.BaseActivity;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import java.util.concurrent.TimeUnit;
 
-import rx.Observable;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import timber.log.Timber;
 
 /**
  * Created by jason on 12/3/2015.
  */
-public class DeviceListActivity extends AppCompatActivity{
+public class DeviceListActivity extends BaseActivity {
 
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
     private DeviceListAdapter deviceListAdapter;
-    private Subscription deviceSubscription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,28 +43,23 @@ public class DeviceListActivity extends AppCompatActivity{
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        deviceSubscription = CommonBluetooth.rxBus.toObserverable()
+    protected void onResume() {
+        super.onResume();
+        CommonBluetooth.observable
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
                 .subscribe(event -> {
                     if (event instanceof DeviceEvent) {
                         DeviceEvent deviceEvent = (DeviceEvent) event;
-                        if(deviceEvent.getType() == DeviceEvent.SCAN_FOUND) {
+                        if (deviceEvent.getType() == DeviceEvent.SCAN_FOUND) {
                             Bundle bundle = deviceEvent.getBundle();
                             Device device = (Device) bundle.get(DeviceEvent.EXTRA_DEVICE);
                             deviceListAdapter.notifyDataChanged(device);
                         }
                     }
-                }, error -> {
-                    Log.e("DeviceList", error.toString());
+                }, throwable -> {
+                    Timber.e(throwable);
                 });
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        deviceSubscription.unsubscribe();
     }
 
     private void initView() {
@@ -73,19 +69,23 @@ public class DeviceListActivity extends AppCompatActivity{
             CommonBluetooth.scanDevices();
             Observable.timer(500, TimeUnit.MILLISECONDS)
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe((l) ->
-                            swipeRefreshLayout.setRefreshing(false));
+                    .subscribe((l) -> swipeRefreshLayout.setRefreshing(false));
         });
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        createDynamicBox(swipeRefreshLayout);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        deviceListAdapter = new DeviceListAdapter(this);
+        deviceListAdapter = new DeviceListAdapter();
         recyclerView.setAdapter(deviceListAdapter);
         recyclerView.addItemDecoration(new HorizontalDividerItemDecoration.Builder(this).build());
-        CommonBluetooth.scanDevices();
+
+        new RxPermissions(this).request(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN, Manifest.permission.BLUETOOTH_PRIVILEGED)
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(grant -> {
+            CommonBluetooth.scanDevices();
+        });
     }
 
     public void setOnDeviceItemClickListener(OnDeviceItemClickListener onDeviceItemClickListener) {
         deviceListAdapter.setOnDeviceItemClickListener(onDeviceItemClickListener);
     }
-
 }

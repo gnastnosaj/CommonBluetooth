@@ -2,20 +2,24 @@
     package="io.jasontsang.commonbluetooth.app">
 
     <application
+        android:name="io.jasontsang.commonbluetooth.app.CommonBluetoothApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name="io.jasontsang.commonbluetooth.app.CommonBluetoothApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="io.jasontsang.commonbluetooth.app.CustomDeviceListActivity" android:configChanges="orientation|keyboard|keyboardHidden|screenSize">
+        <activity
+            android:name="io.jasontsang.commonbluetooth.app.CustomDeviceListActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
-        <activity android:name="io.jasontsang.commonbluetooth.app.DemoActivity" android:configChanges="orientation|keyboard|keyboardHidden|screenSize" />
+        <activity
+            android:name="io.jasontsang.commonbluetooth.app.DemoActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize" />
 
     </application>
 

@@ -1,13 +1,11 @@
 package io.jasontsang.commonbluetooth.adapter;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import io.jasontsang.commonbluetooth.CommonBluetooth;
 import io.jasontsang.commonbluetooth.Device;
 import io.jasontsang.commonbluetooth.OnDeviceItemClickListener;
 import io.jasontsang.commonbluetooth.R;
@@ -20,14 +18,12 @@ import java.util.List;
 /**
  * Created by jason on 11/3/2015.
  */
-public class DeviceListAdapter extends RecyclerView.Adapter<DeviceListAdapter.ViewHolder>{
+public class DeviceListAdapter extends RecyclerView.Adapter<DeviceListAdapter.ViewHolder> {
 
-    private Context context;
     private List<Device> deviceList;
     private OnDeviceItemClickListener onDeviceItemClickListener;
 
-    public DeviceListAdapter(Context context) {
-        this.context = context;
+    public DeviceListAdapter() {
         deviceList = new ArrayList<>();
     }
 
@@ -47,8 +43,7 @@ public class DeviceListAdapter extends RecyclerView.Adapter<DeviceListAdapter.Vi
         holder.deviceAddress.setText(device.getAddress());
         holder.deviceScanTime.setText(new SimpleDateFormat("hh:mm:ss").format(new Date()));
         holder.itemView.setOnClickListener(v -> {
-//            CommonBluetooth.connectDevice(device);
-            if(onDeviceItemClickListener != null) {
+            if (onDeviceItemClickListener != null) {
                 onDeviceItemClickListener.onClick(holder.itemView, device);
             }
         });
@@ -65,23 +60,19 @@ public class DeviceListAdapter extends RecyclerView.Adapter<DeviceListAdapter.Vi
     }
 
     public void notifyDataChanged(Device device) {
-        if(!contain(device)) {
+        if (!contain(device)) {
             this.deviceList.add(device);
             notifyDataSetChanged();
         }
     }
 
     private boolean contain(Device device) {
-        for(Device d: deviceList) {
-            if(d.getType() == device.getType() && d.getAddress().equals(device.getAddress())) {
+        for (Device d : deviceList) {
+            if (d.getType() == device.getType() && d.getAddress().equals(device.getAddress())) {
                 return true;
             }
         }
         return false;
-    }
-
-    public OnDeviceItemClickListener getOnDeviceItemClickListener() {
-        return onDeviceItemClickListener;
     }
 
     public void setOnDeviceItemClickListener(OnDeviceItemClickListener onDeviceItemClickListener) {

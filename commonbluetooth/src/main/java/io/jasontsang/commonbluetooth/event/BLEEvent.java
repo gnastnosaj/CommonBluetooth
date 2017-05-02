@@ -5,7 +5,7 @@ import android.os.Bundle;
 /**
  * Created by jason on 12/4/2015.
  */
-public class BLEEvent extends CommonBluetoothEvent{
+public class BLEEvent extends CommonBluetoothEvent {
 
     public final static String EXTRA_DEVICE = "device";
 

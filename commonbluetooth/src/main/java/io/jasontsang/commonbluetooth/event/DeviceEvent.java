@@ -5,7 +5,7 @@ import android.os.Bundle;
 /**
  * Created by jason on 12/3/2015.
  */
-public class DeviceEvent extends CommonBluetoothEvent{
+public class DeviceEvent extends CommonBluetoothEvent {
 
     public final static int SCAN_FOUND = 0;
     public final static int SCAN_FINISHED = 1;

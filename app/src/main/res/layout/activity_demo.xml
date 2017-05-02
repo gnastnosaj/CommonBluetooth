@@ -2,23 +2,27 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-            <EditText
-                android:id="@+id/send"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="02000a01000500000c03\n02001001001d00000000000801080f03\n02000e010000a40000026002c903\n02000c010000360000083103\n02000c010080b00000201f03"/>
-            <Button
-                android:id="@+id/write"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="writeData" />
-            <TextView
-                android:id="@+id/receive"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="02000a01000500000c03\n02001001001d00000000000801080f03\n02000e010000a40000026002c903\n02000c010000360000083103\n02000c010080b00000201f03" />
+
+        <Button
+            android:id="@+id/write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="writeData" />
+
+        <TextView
+            android:id="@+id/receive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>
