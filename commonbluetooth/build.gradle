@@ -29,3 +29,14 @@ dependencies {
     compile 'com.github.gnastnosaj:Boilerplate:1.0.0'
     compile 'com.yqritc:recyclerview-flexibledivider:+'
 }
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.1'
+            }
+        }
+    }
+}
