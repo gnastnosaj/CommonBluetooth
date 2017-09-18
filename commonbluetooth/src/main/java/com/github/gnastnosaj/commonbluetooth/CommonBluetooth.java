@@ -48,11 +48,17 @@ public class CommonBluetooth {
     private static BluetoothSPP bluetoothSPP;
     private static BluetoothAdapter bluetoothAdapter;
 
+    private static boolean initialized;
+
     public static void init(Application application) {
         init(application, true);
     }
 
     public static void init(Application application, boolean otherDevice) {
+        if (initialized) return;
+
+        initialized = true;
+
         Boilerplate.initialize(application);
 
         CommonBluetooth.application = application;
