@@ -19,7 +19,6 @@ import com.github.gnastnosaj.commonbluetooth.event.CommonBluetoothEvent;
 import com.github.gnastnosaj.commonbluetooth.event.DataEvent;
 import com.github.gnastnosaj.commonbluetooth.event.DeviceEvent;
 
-import com.github.gnastnosaj.boilerplate.Boilerplate;
 import com.github.gnastnosaj.boilerplate.rxbus.RxBus;
 import com.litesuits.bluetooth.LiteBleGattCallback;
 import com.litesuits.bluetooth.LiteBluetooth;
@@ -58,8 +57,6 @@ public class CommonBluetooth {
         if (initialized) return;
 
         initialized = true;
-
-        Boilerplate.initialize(application);
 
         CommonBluetooth.application = application;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
